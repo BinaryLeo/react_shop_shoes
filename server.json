@@ -1,0 +1,67 @@
+{
+  "stock": [
+    {
+      "id": 1,
+      "amount": 3
+    },
+    {
+      "id": 2,
+      "amount": 5
+    },
+    {
+      "id": 3,
+      "amount": 2
+    },
+    {
+      "id": 4,
+      "amount": 1
+    },
+    {
+      "id": 5,
+      "amount": 5
+    },
+    {
+      "id": 6,
+      "amount": 10
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "title": "Relaxed Fit: Sk Arch Fit Recon - Conlee",
+      "price": 100.0,
+      "image": "public/assets/archfit.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Selectors Red for Boys",
+      "price": 38.0,
+      "image": "public/assets/403764_RED.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Sk Fast Boys Blue",
+      "price": 48.0,
+      "image": "public/assets/403875_RYBK.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Max Protect - Fast Track",
+      "price": 115.0,
+      "image": "public/assets/237304_BLYL.jpg"
+    },
+    {
+      "id": 5,
+      "title": "Sk  Arch Fit - Vibrant Step WHITE / MULTI",
+      "price": 95.0,
+      "image": "public/assets/149724_WMLT.jpg"
+    },
+    {
+      "id": 6,
+      "title": "Sk  Arch Fit - Vibrant Step Navy",
+      "price": 219.9,
+      "image": "public/assets/149724_NVMT.jpg"
+    }
+    
+  ]
+}
