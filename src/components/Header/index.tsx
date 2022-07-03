@@ -7,20 +7,20 @@ import { Container, Cart } from './styles';
 import { useCart } from '../../hooks/useCart';
 
 const Header = (): JSX.Element => {
-  // const { cart } = useCart();
-  // const cartSize = // TODO;
+  const { cart } = useCart();
+  const cartSize = cart.length;
 
   return (
     <Container>
       <Link to="/">
-        <img src={logo} alt="Rocketshoes" />
+        <img src={logo} alt="Binary Shoes" />
       </Link>
 
       <Cart to="/cart">
         <div>
           <strong>Cart</strong>
           <span data-testid="cart-size">
-            {/* {cartSize === 1 ? `${cartSize} item` : `${cartSize} itens`} */}
+             {cartSize === 1 ? `${cartSize} item` : `${cartSize} itens`} 
           </span>
         </div>
         <MdShoppingBasket size={36} color="#FFF" />

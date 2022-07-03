@@ -16,7 +16,7 @@ jest.mock('../../hooks/useCart', () => {
           amount: 2,
           id: 1,
           image:
-            'public/assets/archfit.jpg',
+            '/archfit.jpg',
           price: 219.9,
           title: 'Sk  Arch Fit - Vibrant Step Navy',
         },
@@ -24,7 +24,7 @@ jest.mock('../../hooks/useCart', () => {
           amount: 1,
           id: 2,
           image:
-            'public/assets/237304_BLYL.jpg',
+            '/237304_BLYL.jpg',
           price: 115.0,
           title: 'Max Protect - Fast Track',
         },

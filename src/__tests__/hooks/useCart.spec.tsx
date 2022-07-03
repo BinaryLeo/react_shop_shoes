@@ -16,15 +16,15 @@ const initialStoragedData = [
     id: 1,
     amount: 2,
     image:
-      'public/assets/archfit.jpg',
-    price: 219.9,
-    title: 'Sk  Arch Fit - Vibrant Step Navy',
+      '/archfit.jpg',
+    price: 100.0,
+    title: 'Relaxed Fit: Sk Arch Fit Recon - Conlee',
   },
   {
     id: 2,
     amount: 1,
     image:
-      'public/assets/403764_RED.jpg',
+      '/403764_RED.jpg',
     price: 38.0,
     title: 'Selectors Red for Boys',
   },
@@ -50,7 +50,7 @@ describe('useCart Hook', () => {
           id: 1,
           amount: 2,
           image:
-            'public/assets/archfit.jpg',
+            '/archfit.jpg',
           price: 100.0,
           title: 'Relaxed Fit: Sk Arch Fit Recon - Conlee',
         },
@@ -58,7 +58,7 @@ describe('useCart Hook', () => {
           id: 2,
           amount: 1,
           image:
-            'public/assets/403764_RED.jpg',
+            '/403764_RED.jpg',
           price: 38.0,
           title: 'Selectors Red for Boys',
         },
@@ -78,7 +78,7 @@ describe('useCart Hook', () => {
       title: 'Sk Fast Boys Blue',
       price: 48.0,
       image:
-        'public/assets/403875_RYBK.jpg',
+        '/403875_RYBK.jpg',
     });
 
     const { result, waitForNextUpdate } = renderHook(useCart, {
@@ -97,7 +97,7 @@ describe('useCart Hook', () => {
           id: 1,
           amount: 2,
           image:
-            'public/assets/archfit.jpg',
+            '/archfit.jpg',
           price: 100.0,
           title: 'Relaxed Fit: Sk Arch Fit Recon - Conlee',
         },
@@ -105,7 +105,7 @@ describe('useCart Hook', () => {
           id: 2,
           amount: 1,
           image:
-            'public/assets/403764_RED.jpg',
+            '/403764_RED.jpg',
           price: 38.0,
           title: 'Selectors Red for Boys',
         },
@@ -115,12 +115,12 @@ describe('useCart Hook', () => {
           title: 'Sk Fast Boys Blue',
           price: 48.0,
           image:
-            'public/assets/403875_RYBK.jpg',
+            '/403875_RYBK.jpg',
         },
       ])
     );
     expect(mockedSetItemLocalStorage).toHaveBeenCalledWith(
-      '@RocketShoes:cart',
+      '@BinaryShoes:cart',
       JSON.stringify(result.current.cart)
     );
   });
@@ -142,7 +142,7 @@ describe('useCart Hook', () => {
     await waitFor(
       () => {
         expect(mockedToastError).toHaveBeenCalledWith(
-          'Error to add item'
+          'Error adding product to cart'
         );
       },
       { timeout: 200 }
@@ -159,12 +159,12 @@ describe('useCart Hook', () => {
 
     apiMock.onGet(`stock/${productId}`).reply(200, {
       id: 1,
-      amount: 3,
+      amount: 2,
     });
     apiMock.onGet(`products/${productId}`).reply(200, {
       id: 1,
       image:
-        'public/assets/archfit.jpg',
+        '/archfit.jpg',
       price: 100.0,
       title: 'Relaxed Fit: Sk Arch Fit Recon - Conlee',
     });
@@ -185,7 +185,7 @@ describe('useCart Hook', () => {
           id: 1,
           amount: 2,
           image:
-            'public/assets/archfit.jpg',
+            '/archfit.jpg',
           price: 100.0,
           title: 'Relaxed Fit: Sk Arch Fit Recon - Conlee',
         },
@@ -193,7 +193,7 @@ describe('useCart Hook', () => {
           id: 2,
           amount: 1,
           image:
-            'public/assets/403764_RED.jpg',
+            '/403764_RED.jpg',
           price: 38.0,
           title: 'Selectors Red for Boys',
         },
@@ -201,7 +201,7 @@ describe('useCart Hook', () => {
       ])
     );
     expect(mockedSetItemLocalStorage).toHaveBeenCalledWith(
-      '@RocketShoes:cart',
+      '@BinaryShoes:cart',
       JSON.stringify(result.current.cart)
     );
   });
@@ -217,7 +217,7 @@ describe('useCart Hook', () => {
       id: 2,
       title: "Selectors Red for Boys",
       price: 38.0,
-      image: "public/assets/403764_RED.jpg"
+      image: "/403764_RED.jpg"
     });
 
     const { result, waitFor } = renderHook(useCart, {
@@ -231,7 +231,7 @@ describe('useCart Hook', () => {
     await waitFor(
       () => {
         expect(mockedToastError).toHaveBeenCalledWith(
-          'Quantity ordered out of stock'
+          'Out of stock'
         );
       },
       {
@@ -262,14 +262,14 @@ describe('useCart Hook', () => {
           id: 1,
           amount: 2,
           image:
-            'public/assets/archfit.jpg',
+            '/archfit.jpg',
           price: 100.0,
           title: 'Relaxed Fit: Sk Arch Fit Recon - Conlee',
         },
       ])
     );
     expect(mockedSetItemLocalStorage).toHaveBeenCalledWith(
-      '@RocketShoes:cart',
+      '@BinaryShoes:cart',
       JSON.stringify(result.current.cart)
     );
   });
@@ -285,7 +285,7 @@ describe('useCart Hook', () => {
       result.current.removeProduct(productId);
     });
 
-    expect(mockedToastError).toHaveBeenCalledWith('Product removal error');
+    expect(mockedToastError).toHaveBeenCalledWith('Error removing product from cart');
     expect(result.current.cart).toEqual(
       expect.arrayContaining(initialStoragedData)
     );
@@ -305,7 +305,7 @@ describe('useCart Hook', () => {
     });
 
     act(() => {
-      result.current.updateProductAmount({ amount: 2, productId });
+      result.current.updateProductAmount({ amount: 1, productId });
     });
 
     await waitForNextUpdate({ timeout: 200 });
@@ -316,7 +316,7 @@ describe('useCart Hook', () => {
           id: 1,
           amount: 2,
           image:
-            'public/assets/archfit.jpg',
+            '/archfit.jpg',
           price: 100.0,
           title: 'Relaxed Fit: Sk Arch Fit Recon - Conlee',
         },
@@ -324,14 +324,14 @@ describe('useCart Hook', () => {
           id: 2,
           amount: 1,
           image:
-            'public/assets/403764_RED.jpg',
+            '/403764_RED.jpg',
           price: 38.0,
           title: 'Selectors Red for Boys',
         },
       ])
     );
     expect(mockedSetItemLocalStorage).toHaveBeenCalledWith(
-      '@RocketShoes:cart',
+      '@BinaryShoes:cart',
       JSON.stringify(result.current.cart)
     );
   });
@@ -352,7 +352,7 @@ describe('useCart Hook', () => {
     await waitFor(
       () => {
         expect(mockedToastError).toHaveBeenCalledWith(
-          'Erro na alteração de quantidade do produto'
+          'Error updating product amount'
         );
       },
       { timeout: 200 }
@@ -383,7 +383,7 @@ describe('useCart Hook', () => {
     await waitFor(
       () => {
         expect(mockedToastError).toHaveBeenCalledWith(
-          'Quantity ordered out of stock'
+          'Out of stock'
         );
       },
       { timeout: 200 }

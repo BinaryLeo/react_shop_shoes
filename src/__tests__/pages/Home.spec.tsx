@@ -17,14 +17,14 @@ describe('Home Page', () => {
       {
         id: 1,
         image:
-          'public/assets/archfit.jpg',
+          '/archfit.jpg',
         price: 100.0,
         title: 'Relaxed Fit: Sk Arch Fit Recon - Conlee',
       },
       {
         id: 2,
         image:
-          'public/assets/403764_RED.jpg',
+          '/403764_RED.jpg',
         price: 38.0,
         title: 'Selectors Red for Boys',
       },
@@ -33,7 +33,7 @@ describe('Home Page', () => {
         title: 'Sk Fast Boys Blue',
         price: 48.0,
         image:
-          'public/assets/403875_RYBK.jpg',
+          '/403875_RYBK.jpg',
       },
     ]);
   });
@@ -47,13 +47,13 @@ describe('Home Page', () => {
           image:
             'Relaxed Fit: Sk Arch Fit Recon - Conlee',
           price: 100.0,
-          title: 'public/assets/archfit.jpg',
+          title: '/archfit.jpg',
         },
         {
           amount: 1,
           id: 2,
           image:
-            'public/assets/403764_RED.jpg',
+            '/403764_RED.jpg',
           price: 38.0,
           title: 'Selectors Red for Boys',
         },
@@ -99,7 +99,7 @@ describe('Home Page', () => {
           amount: 3,
           id: 1,
           image:
-            'public/assets/archfit.jpg',
+            '/archfit.jpg',
           price: 100.0,
           title: 'Relaxed Fit: Sk Arch Fit Recon - Conlee',
         },

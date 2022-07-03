@@ -65,7 +65,7 @@ describe('Cart Page', () => {
           id: 1,
           amount: 2,
           image:
-            'public/assets/archfit.jpg',
+            '/archfit.jpg',
           price: 100.0,
           title: 'Relaxed Fit: Sk Arch Fit Recon - Conlee',
         },
@@ -73,7 +73,7 @@ describe('Cart Page', () => {
           id: 2,
           amount: 1,
           image:
-            'public/assets/403764_RED.jpg',
+            '/403764_RED.jpg',
           price: 38.0,
           title: 'Selectors Red for Boys',
         },
@@ -119,7 +119,7 @@ describe('Cart Page', () => {
           id: 2,
           amount: 1,
           image:
-            'public/assets/403764_RED.jpg',
+            '/403764_RED.jpg',
           price: 38.0,
           title: 'Selectors Red for Boys',
         },
